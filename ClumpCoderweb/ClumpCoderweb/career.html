@@ -1,0 +1,176 @@
+<!-- career.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers - ClumpCoder</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow p-4 flex justify-between">
+    <a href="Clumpcoder.html" class="text-2xl font-bold text-black-600">ClumpCoder</a>
+    <ul class="flex gap-6">
+      <a href="Clumpcoder.html" class="hover:text-blue-600"><b>Home</b></a>
+      <a href="Clumpcoder.html#services" class="hover:text-blue-600"><b>Services</b></a>
+      <a href="Clumpcoder.html#about" class="hover:text-blue-600"><b>About</b></a>
+      <a href="Clumpcoder.html#portfolio" class="hover:text-blue-600"><b>Portfolio</b></a>
+      <a href="Clumpcoder.html#blog" class="hover:text-blue-600"><b>Blog</b></a>
+      <a href="Clumpcoder.html#contact" class="hover:text-blue-600"><b>Contact</b></a>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-12 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+    <h1 class="text-4xl font-bold">Join Our Team</h1>
+    <p class="mt-3 max-w-2xl mx-auto">
+      Work with the best minds, build exciting products, and grow your career with us.
+    </p>
+  </section>
+
+  <!-- Open Positions -->
+  <section class="container mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold mb-6 text-center">Open Positions</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold">Frontend Developer</h3>
+        <p class="text-gray-600 mt-2">Remote • Full-time</p>
+        <p class="mt-4">Work on React, Tailwind and modern web technologies.</p>
+        <button onclick="openForm('Frontend Developer')" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</button>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow">
+        <h3 class="text-xl font-semibold">Backend Developer</h3>
+        <p class="text-gray-600 mt-2">Onsite • Full-time</p>
+        <p class="mt-4">Work with Node.js, Express and databases to build APIs.</p>
+        <button onclick="openForm('Backend Developer')" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Apply Now</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Form -->
+  <div id="applyModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6 relative">
+      <button onclick="closeForm()" class="absolute top-3 right-3 text-gray-600 hover:text-red-600 text-xl">&times;</button>
+      <h2 id="jobTitle" class="text-2xl font-bold mb-4">Apply</h2>
+
+      <!-- Application Form -->
+      <form id="applicationForm" action="http://localhost:5000/apply" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="jobRole" name="role">
+
+        <input type="text" name="name" placeholder="Full Name" required class="w-full p-2 border rounded mb-2">
+        <input type="email" name="email" placeholder="Email" required class="w-full p-2 border rounded mb-2">
+        <input type="file" name="resume" accept=".pdf,.doc,.docx" required class="w-full p-2 border rounded mb-2">
+        <textarea name="message" rows="4" placeholder="Why should we hire you?" class="w-full p-2 border rounded mb-2"></textarea>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Submit Application</button>
+      </form>
+
+      <!-- Success Message -->
+      <div id="successMessage" class="hidden text-center">
+        <h3 class="text-xl font-semibold text-green-600">✅ Thank You!</h3>
+        <p class="mt-2 text-gray-700">You have submitted successfully.<br>Our team will connect to you soon.</p>
+        <button onclick="closeForm()" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Clumpcoder IT Solutions</h4>
+          <p>Innovating with technology since 2010.</p>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+            <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+            <li><a href="#about" class="hover:text-blue-400">About</a></li>
+            <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-blue-400">Cloud Solutions</a></li>
+            <li><a href="#" class="hover:text-blue-400">Cybersecurity</a></li>
+            <li><a href="#" class="hover:text-blue-400">Software Development</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Subscribe</h4>
+          <input type="email" placeholder="Enter your email"
+            class="w-full px-3 py-2 rounded-md bg-gray-700 text-white mb-2">
+          <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded btn-hover">Subscribe</button>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+        <p>© 2024 ClumpCoder Solutions. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function openForm(role) {
+      document.getElementById("applyModal").classList.remove("hidden");
+      document.getElementById("jobTitle").innerText = "Apply for " + role;
+      document.getElementById("jobRole").value = role;
+      document.getElementById("applicationForm").classList.remove("hidden");
+      document.getElementById("successMessage").classList.add("hidden");
+    }
+
+    function closeForm() {
+      document.getElementById("applyModal").classList.add("hidden");
+    }
+
+    // ✅ Form submit handler
+    document.getElementById("applicationForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+      const form = this;
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch("http://localhost:5000/apply", {
+          method: "POST",
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error("Server error: " + response.status);
+        }
+
+        const result = await response.json();
+
+        if (result.success) {
+          form.reset();
+          form.classList.add("hidden");
+          document.getElementById("successMessage").classList.remove("hidden");
+
+          // ✅ Alert message
+          alert("✅ Thank you! Your form is submitted. We will connect with you soon.");
+        } else {
+          alert("❌ Error: " + (result.message || "Something went wrong."));
+        }
+      } catch (err) {
+        console.error(err);
+        alert("⚠️ Form not submitted| Please try again");
+      }
+    });
+
+    // Click outside modal to close
+    window.onclick = function(event) {
+      const modal = document.getElementById("applyModal");
+      if (event.target === modal) {
+        modal.classList.add("hidden");
+      }
+    }
+  </script>
+
+</body>
+</html>

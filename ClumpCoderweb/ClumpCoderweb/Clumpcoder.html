@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClumpCoder IT Solutions - IT Company</title>
+    <link rel="icon" href="ll.jpeg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add this inside <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: red;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dbbdbe30-1010-43b3-aa97-3ca746d067e5.png');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            /* border: 5px solid black; */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgb(159, 159, 159);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+            /* Self */
+        .tech-item{
+            border: 0.1px solid black;
+        }
+
+        .tech-item:hover{
+            /* transform: translateY(5px); */
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgb(159, 159, 159);
+        }
+         /* @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0; /* shuru me hidden rahega */
+    /* animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s; /* 2 second baad start hoga */
+  /* } */  
+   /* @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .zoom-in {
+    opacity: 0; 
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 0.5s; /* 2 sec delay */
+  /* }  */
+     @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+
+  .fade-in-out {
+    animation: fadeInOut 2s ease-in-out infinite;
+  }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900" style="background-color: 	#ffffff;">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="Images/CompanyIcon.jpeg"
+                    alt="ClumpCoder Solutions logo featuring interconnected gears and circuit patterns in blue and green colors representing technology and innovation"
+                    class="h-10 w-10">
+            <h1 class="text-2xl font-bold bg-black from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+  ClumpCoder
+</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition"><b>Home</b></a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition"><b>Services</b></a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition"><b>About</b></a>
+                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition"><b>Portfolio</b></a>
+                <!-- <a href="#team" class="text-gray-700 hover:text-blue-600 transition"><b>Career</b></a> -->
+<a href="career.html" class="text-gray-700 hover:text-blue-600 transition"><b>Career</b></a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition"><b>Contact</b></a>
+            </nav>
+            <button id="mobile-menu-toggle" class="md:hidden text-gray-700"><i class="fas fa-bars"></i></button>
+        </div>
+       
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden" style="background-color: #fbfbfb;">
+    <!-- Full-screen background video for immersive tech experience -->
+    <video autoplay muted loop playsinline 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 tech-video">
+        <source src="Images/vecteezy_document-management-concept-virtual-screen-icons-document_44606384 (1).mp4" type="video/mp4" />
+        <!-- Fallback description for technology-themed background video -->
+        Your browser does not support the video tag. This is a technology-themed background video showcasing
+        advanced computer circuits, flowing data streams, animated software code, cloud architecture icons, and AI
+        neural network patterns to embody cutting-edge IT innovations, digital workflows, and futuristic tech
+        developments for an engaging homepage experience.
+    </video>
+
+        <!-- Semi-transparent overlay for text readability and stylish effect -->
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black via-transparent to-black opacity-60 z-10">
+        </div>
+
+        <!-- Content layered on top of the background video -->
+        <div
+            class="relative z-10 text-center text-white p-6 bg-black bg-opacity-30 rounded-lg max-w-2xl mx-auto animate-fadeInUp">
+<h1 class="text-4xl font-extrabold mb-4 drop-shadow-lg fade-in-out color">
+  ClumpCoder is a multi-faceted tech company focused on web, mobile, e-commerce, and AI development solutions
+</h1>
+
+            </h1>
+            <p class="text-lg mb-6 drop-shadow-md">We build more than technology—we build momentum.
+At our core, we’re an IT powerhouse dedicated to transforming businesses with future-ready digital solutions. Our work is designed to empower brands, accelerate growth, and set new standards of innovation that separate you from the competition.</p>
+            <a href="#contact"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">Get
+                Started Now</a>
+        </div>
+    </section>
+    <!-- <section id="home" class="hero min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h2 class="text-5xl font-bold mb-4">Innovating Tomorrow's Technology Today</h2>
+            <p class="text-xl mb-8">Leading IT solutions for businesses worldwide, from cloud computing to
+                cybersecurity.</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full btn-hover">Get
+                    Started</button>
+                <button
+                    class="border border-white text-white px-8 py-3 rounded-full btn-hover hover:bg-white hover:text-blue-600">Learn
+                    More</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-gray-100" style="background-color: #ffffff;"  data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container text-center mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-8 border-b-4 border-green-500 inline-block pb-2 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Our Services</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-cloud text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Cloud Solutions</h4>
+                    <p>Scalable cloud infrastructure and migration services for seamless operations.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Cybersecurity</h4>
+                    <p>Advanced protection against threats with cutting-edge security protocols.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Software Development</h4>
+                    <p>Custom software tailored to your business needs using modern technologies.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-database text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Data Analytics</h4>
+                    <p>Transform data into insights with AI-driven analytics platforms.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-robot text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">AI & Machine Learning</h4>
+                    <p>Intelligent automation and predictive modeling for smarter decisions.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Mobile Application</h4>
+                    <p>In today’s digital era, mobile applications have become an integral part of everyday life.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Web Application</h4>
+                    <p>Web applications are powerful tools that allow businesses to provide services and solutions directly through browsers without the need for installation.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Ocman Realty</h4>
+                    <p>At Ocman Realty, we believe that finding the perfect property is more than just a transaction – it’s about building dreams and creating value.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-cube text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Virtual Realty</h4>
+                    <p>At Virtual Realty, we combine technology and innovation to redefine the real estate experience.</p>
+                </div> 
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-bullhorn text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Digital Marketing</h4>
+                    <p>Digital Marketing helps businesses reach the right audience, build brand awareness, and drive measurable results through strategies like SEO, social media, content marketing, email campaigns, and paid advertising.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center ">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a13bebdc-2d47-4e8e-bacd-bc8b26f867c6.png"
+                        alt="Modern office space with diverse team collaborating on computers surrounded by innovative tech gadgets and light-colored furniture"
+                        class="rounded-lg shadow-md"
+                        data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                </div>
+                <div class="lg:w-1/2 lg:pl-8 text-center">
+                    <h3 class="text-3xl font-bold mb-6 text-center border-b-4 border-green-500 inline-block pb-2 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">About Clumpcoder IT Solutions</h3>
+                    <p class="text-md mb-4 fade-in" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">ClumpCoder is a multi-faceted tech company focused on web, mobile, e-commerce, and AI development solutions, boasting a small but dynamic team of approximately 15 professionals, including web developers, mobile developers, AI developers, designers, and testers. Their vision is centered around achieving 100% customer satisfaction by delivering top-notch products and services at competitive prices, with the goal of becoming the premier choice in computing and information technology services, consultancy, and development through a comprehensive service offering. he Technologies on which we work on:
+
+- Web/ Mobile Technologies: 
+ Python, PHP, React js, Angular js, React Native, Android, Flutter, HTML, CSS, Javascript, My SQL, 
+MongoDB, AWS, Git 
+
+- Artificial Intelligence: 
+ ML, Computer Vision, OpenCV, pandas, Numpy, Scikit learn, Chatterbot, Tensor Flow
+
+- Task Management Tool: 
+ Jira, Asana, Trello, Basecamp etc.</p>
+                   
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded btn-hover">Read
+                        More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Technology Section -->
+    <section id="technologies" class="py-10 px-6 bg-white" style="background-color: #ffffff;">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 animate-fadeInUp bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent" >Our Comprehensive Technology Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 ">
+                
+                <!-- Expanded list covering a wide range of technologies as requested -->
+             
+
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left"
+                    data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Nodejs.webp" alt="Node.js logo with hexagon emblem in green for server-side JavaScript runtime"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Node.js</h3>
+                    <p class="text-sm text-gray-600 mt-2">Runtime environment</p>
+                </div>
+
+            
+
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left"
+                    data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Aws.png" alt="AWS icon with orange circles for cloud computing services and infrastructure"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">AWS</h3>
+                    <p class="text-sm text-gray-600 mt-2">Cloud platform</p>
+                </div>
+
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Copilot.jpg"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Copilot</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Web4.0.jpg"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Web 4.0</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/buildspace.png"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">buildSpace</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Uizer.jpg"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Uizer</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <!-- <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee3b7223-c1b5-4ac7-bf0d-924eb9c064e9.png"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Python</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div> -->
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/React.webp"
+                        alt="React logo with atomic design in blue illustrating a popular library for building interactive user interfaces"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">React</h3>
+                    <p class="text-sm text-gray-600 mt-2">Frontend framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Python.webp"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Python</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Java.webp"
+                        alt="Java logo with coffee cup motif in brown tones for enterprise-level object-oriented programming"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Java</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <!-- <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Aws.png"
+                        alt="AWS icon with orange circles for cloud computing services and infrastructure"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">AWS</h3>
+                    <p class="text-sm text-gray-600 mt-2">Cloud platform</p>
+                </div> -->
+
+
+                <div class="tech-item bg-gray-200 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left"
+                    data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Wordpress.webp"
+                        alt="WordPress icon in blue-white tones representing a versatile content management system for websites and blogs"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">WordPress</h3>
+                    <p class="text-sm text-gray-600 mt-2">CMS platform</p>
+                </div>
+
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/TensorFlow.webp"
+                        alt="TensorFlow logo in orange-blue for AI and machine learning neural network framework"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">TensorFlow</h3>
+                    <p class="text-sm text-gray-600 mt-2">ML framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Docer.webp"
+                        alt="Docker logo with container ship for application virtualization and deployment"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Docker</h3>
+                    <p class="text-sm text-gray-600 mt-2">Containerization</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Kubernet.webp"
+                        alt="Kubernetes logo with wheel for container orchestration and management"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Kubernetes</h3>
+                    <p class="text-sm text-gray-600 mt-2">Orchestration tool</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/MongoDB.webp"
+                        alt="MongoDB icon with green leaf for NoSQL database for flexible data management"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">MongoDB</h3>
+                    <p class="text-sm text-gray-600 mt-2">NoSQL database</p>
+                </div>
+                <!-- <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Nodejs.webp"
+                        alt="Node.js logo with hexagon emblem in green for server-side JavaScript runtime"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Node.js</h3>
+                    <p class="text-sm text-gray-600 mt-2">Runtime environment</p>
+                </div> -->
+
+                <div class="tech-item bg-gray-200 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left"
+                    data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Shofy.webp"
+                        alt="Shopify icon with blue-green color scheme symbolizing robust e-commerce platform for online retail and sales automation"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Shopify</h3>
+                    <p class="text-sm text-gray-600 mt-2">E-commerce platform</p>
+                </div>
+
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Angular.webp"
+                        alt="Angular logo with A design in red for comprehensive web application framework"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Angular</h3>
+                    <p class="text-sm text-gray-600 mt-2">Framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/SQLServer.webp"
+                        alt="SQL Server logo in blue-red for relational database management system"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">SQL Server</h3>
+                    <p class="text-sm text-gray-600 mt-2">Database</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Vuejs.webp"
+                        alt="Vue.js logo with curving V in green for progressive JavaScript framework"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Vue.js</h3>
+                    <p class="text-sm text-gray-600 mt-2">Framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Azure.webp"
+                        alt="Azure logo with cloud shapes in blue-orange for Microsoft cloud services"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Azure</h3>
+                    <p class="text-sm text-gray-600 mt-2">Cloud platform</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Git.webp"
+                        alt="Git logo with branching tree in orange for version control system"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Git</h3>
+                    <p class="text-sm text-gray-600 mt-2">Version control</p>
+                </div>
+                <!-- Additional technologies for completeness -->
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/DataProcessing.webp"
+                        alt="MapReduce icon illustrating big data processing frameworks like Hadoop for large-scale data analysis and insights"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Data Processing</h3>
+                    <p class="text-sm text-gray-600 mt-2">Big data frameworks</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="Images/Blockchain.webp"
+                        alt="Blockchain chain link icon representing decentralized ledger technology for secure transactions and smart contracts"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Blockchain</h3>
+                    <p class="text-sm text-gray-600 mt-2">Distributed ledger</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-10 bg-gray-100" style="background-color: #ffffff;" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Our Portfolio</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="Images/kuhu.png"
+                        alt="Dashboard interface for a financial app showing charts, graphs, and user-friendly controls in a clean modern layout"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">KUHOO-Online Education</h4>
+                        <p>At Kuhoo, we believe that providing the right loan at the right time can positively transform not just the life of a student but also uplift their entire family. Our goal is to make higher education accessible without the weight of financial stress.
+</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="Images/Edu_Academy.png"
+                        alt="Healthcare management system interface with patient records and appointment scheduler in soothing colors"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Education Academy</h4>
+                        <p>~Enhanced Efficiency in school operations.
+~High Client Satisfaction with robust features.
+~Market Recognition as a trusted ERP solution.
+</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="Images/InVoiceapp.png"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Easy Invoice App</h4>
+                        <p>Easy Invoice App – Generate and send professional PDF invoices and draft orders. Customize templates with your logo and store details, bulk print/export, and automate invoice delivery.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="Images/Triliungal.png"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">TRILINGUALKIDSACADEMY</h4>
+                        <p>Trilingual Kids -
+The concept of the project is to develop a model 
+where Teachers and Students can connect virtually 
+instead of going to schools. The application has an 
+interface where Teacher can upload the 
+assignments for students to work on it and give 
+them the score according to their performance. 
+</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="Images/Mathgame.jpg"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">MathGame</h4>
+                        <p>MathGame is an interactive and fun educational platform designed to make learning mathematics enjoyable for students of all ages. By combining games, challenges, and quizzes, MathGame transforms ordinary math practice into an exciting adventure.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="Images/mufo.png"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Mufo-App</h4>
+                        <p>Mufo is an innovative platform designed to make learning smart, interactive, and fun. Whether you are a student, professional, or lifelong learner, Mufo provides tools and resources that simplify complex concepts and enhance understanding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="py-8 bg-gray-100" style="background-color: #ffffff;" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-6 rounded-lg shadow">
+                    <img src="Images/Cybersecurity.webp"
+                        alt="Security shield icon with digital locks and codes on a server rack, representing advanced cybersecurity measures in a modern data center setting" />
+                    <h3 class="text-xl font-semibold mb-4" style="margin-top: 20px;">Cybersecurity</h3>
+                    <p class="text-gray-700">Protect your data with our comprehensive security solutions, including
+                        threat detection and compliance management.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow">
+                    <img src="Images/CloudComputing.webp"
+                        alt="Cloud with connected networks and data streams, illustrating scalable cloud computing infrastructure in a futuristic sky environment" />
+                    <h3 class="text-xl font-semibold mb-4" style="margin-top: 20px;">Cloud Computing</h3>
+                    <p class="text-gray-700">Scale your operations with our cloud-based solutions, ensuring flexibility
+                        and cost-efficiency.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow">
+                    <img src="Images/AIML.webp"
+                        alt="Artificial intelligence brain with neural networks and machine learning algorithms visualized as glowing circuits on a tech circuit board" />
+                    <h3 class="text-xl font-semibold mb-4" style="margin-top: 20px;">AI & ML Solutions</h3>
+                    <p class="text-gray-700">Harness the power of AI with custom machine learning models tailored to
+                        your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-8" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4">
+            <!-- <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio</h2> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-item bg-white rounded-lg shadow overflow-hidden">
+                    <img src="Images/ERP.png"
+                        alt="Large-scale ERP system dashboard on multiple screens showing analytics and data visualization in a corporate office with team members reviewing results" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">ERP System Development</h3>
+                        <p class="text-gray-700">Custom ERP system for a manufacturing company, increasing efficiency by
+                            40%.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow overflow-hidden">
+                    <img src="Images/Ecommerce.webp"
+                        alt="Mobile app interface with e-commerce features, shopping cart, payment gateway, and delivery tracking on smartphone and tablet screens" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-700">Full-stack e-commerce solution with secure payment integration.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow overflow-hidden">
+                    <img src="Images/Business.webp"
+                        alt="Interactive data visualization dashboard with charts, graphs, and real-time metrics on a computer screen in a business intelligence control room" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Business Intelligence</h3>
+                        <p class="text-gray-700">Advanced BI tools providing actionable insights for executive
+                            decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+    <!-- <section id="team" class="py-10">
+        <div class="container mx-auto px-4 ">
+            <h3 class="text-3xl font-bold text-center mb-12">Meet Our Team</h3>
+            <div class="grid md:grid-cols-2 ">
+                <div class="text-center">
+                    <img src="Image/ss.jpg"
+                        alt="Portrait of Alex Johnson, CEO, smiling professional man in business attire with short brown hair"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-semibold">Shraddha Khandelwal</h4>
+                    <p class="text-gray-600">CEO & Founder</p>
+                    <p>15+ years in tech leadership</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/016d0935-7a4b-477d-b609-5ee8a99a2e1c.png"
+                        alt="Portrait of Sarah Chen, CTO, focused Asian woman in tech attire with glasses and black hair"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-semibold">Sarah Chen</h4>
+                    <p class="text-gray-600">CTO</p>
+                    <p>Expert in cloud architectures</p>
+                </div>
+                
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-10 bg-gray-100" style="background-color: #ffffff;" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Latest Insights</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="Images/AIML.webp"
+                        alt="Illustrative graphic showing futuristic cityscapes with integrated AI technologies and autonomous vehicles"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2">The Future of AI in Business</h4>
+                    <p class="text-gray-600 mb-4">Exploring how AI is reshaping industries and impacting businesses.</p>
+                    <button class="text-blue-600 hover:text-blue-700 font-semibold">Read Article</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="Images/Cloudsecurity.webp"
+                        alt="Infographic explaining cloud security layers with shields, locks, and data flow diagrams"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2">Cloud Security Best Practices</h4>
+                    <p class="text-gray-600 mb-4">Essential strategies to protect your data in the cloud era.</p>
+                    <button class="text-blue-600 hover:text-blue-700 font-semibold">Read Article</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Map Section -->
+    <section id="map" class="py-10" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Our Global Presence</h3>
+            <p class="text-center mb-8">Track our offices and operations in real-time across the world.</p>
+            <div class="map-container rounded-lg shadow-md">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.3727457765403!2d75.87110847501972!3d22.714382927759416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd40f16f9f4b%3A0x1628300439af6dca!2sClumpCoder!5e0!3m2!1sen!2sin!4v1757060738207!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:2px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="mt-8 text-center">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded btn-hover">View Full
+                    Map</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="py-5 bg-gray-100" style="background-color: #ece5dd;">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h3>
+            <div class="relative overflow-hidden">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide">
+                        <div class="bg-white rounded-lg shadow-md p-8 mx-4 min-w-full">
+                            <p class="text-lg italic mb-4">"TechNova transformed our operations with their cloud
+                                solutions. Extraordinary service!"</p>
+                            <p class="font-semibold">- John Smith, CEO of Acme Corp</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-8 mx-4 min-w-full">
+                            <p class="text-lg italic mb-4">"Their cybersecurity expertise saved us from potential
+                                breaches. Highly recommended."</p>
+                            <p class="font-semibold">- Lisa Wong, CIO of TechStart Inc</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-8 mx-4 min-w-full">
+                            <p class="text-lg italic mb-4">"Professional, innovative, and reliable. They've been our
+                                tech partners for years."</p>
+                            <p class="font-semibold">- David Lee, Founder of GlobalTech</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <button id="prev-testimonial"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded mr-4">Prev</button>
+                    <button id="next-testimonial"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">Next</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 m-20" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4" style="background-color: #ffffff;">
+            <h3 class="text-3xl font-bold text-center mb-12">Get In Touch</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="mb-6">
+    <h4 class="text-xl font-semibold mb-2">Contact Information</h4>
+
+    <p class="mb-2">
+        <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+        411 President Tower, Madhumilan Square, Indore
+    </p>
+
+    <p class="mb-2">
+        <i class="fas fa-phone-alt mr-2 text-blue-600"></i>
+        +91 94798-40841
+    </p>
+
+    <p class="mb-2">
+        <i class="fas fa-envelope mr-2 text-blue-600"></i>
+        developer.clumpcoder@gmail.com
+    </p>
+</div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            
+                            <a href="https://www.linkedin.com/company/clumpcoder/posts/?feedView=all" class="text-blue-600 hover:text-blue-700"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAaVBMVEUAfrv///8AdbcAd7gAeLioyODX5vHF2uq10OXB2OkAfLoAcbUAerkAc7b7/f7y9/tFk8Uehb9sps54rNJVmsnm8PaDs9WWvdoxi8Gfw92OudjP4O70+Ps7j8Ndnsvh7PQmh78AaLFjosxY5DW2AAAGLUlEQVR4nO2d6XaiMBhAySJIEmQXce30/R9yQGuLiCYtiSY53/035wxj7mTfvgTojjRuiiwPXCPPiiZO73WC0Z/37YZjKhh7d4J/DWOCYr5px5K3hnXBqXtuQxjlRf3QcFVy8e4UakDwcjVtGFH67sRpgtJoynDN3S6fQxhf3xtW5N3J0gqpxoaZLyX0Cs1uDSvfBDvFami49quIXiDrH8OIvzs1RuDR1XDleC//CEZXX4alf5XwAi0vhrWfZbSH12fDwoeh2jSi6A1Tf7Owy8R9Z9j6Wgt7aNsZbvxsSC+wDQq8LqRdMU2DGL87EUbBcdD4XA27itgEHvcVPaIIMp8bmq6pyYLcc0P3lkUBAADch1GCOwj1c5wgSJJtl7sw3C2bI8beSQpexcM9nV3BvRrSsuR4QiPSMvFnQCRYNPbrOW18yUaSraYE+5XI5N1p0wIpHvh1tD6sETwT7BTdz0WRPRPsCqrr2zpMPKqDV1xfrUsmW9Ehjm8LiEomiNDW6T6Dh3LDlcuNDZM0MxfWDmciWaoYnhzORC5rSC+4u6KlVki7YursVIqu5XY9S2d7fbVqiFDo7P4OkXb3F1Jnmxqs0Bv27L03XDk7cMM77/Mwltv1nJxtaWirZhg521uIp9P7H9w9ssKYmmHl7JhGsTF1efqkNmxzd9DWb8WoGDq9UkMUWtOds31FDyPyGeKHy1nYdRifMsHW6SzsSCQzKJeXML54vty2d7cr/Ibhu63DgaAXh6pY8nCKUQceZGHQ3wVrpgWX/uwC481EZUwr9xuZH1hyHDmeSo9uLJ4RON/u9l96YXvw4krtGIo5O1RVlnPs6V2p4Hwp3MW77AAAAAAAWEYfZwbjpAdjQqjwanzBKE4OZRuHdZru07QOo8X2GHDiyxiR8k0zNdfeR9sPk6GBBJHxp8/Gezkiydt6Qu+6mNB+JIYmM6JcSoinfln62e1hOJZk0iMD4aeZCRtZyH4ZTa2XUtlnwy1HlhyUdoDqwsSk+wWGVCgeakHodNC//GzekCtuw15YaF/8Mm3IVM8KXKlzzRvOhg1F/qQBfcBR73alWUOqeDTwFr23PIwakuNfBBFa61Q0afhXQb1XIAwaUoVT8o846mtuzBmKzd8FEdK352XMEJO95K88Rd8tD2OG/xRPBT5C2+a6KcO4nCeI0EFTOTVluFO7BfCEk6ZyaspQA5oiz1hsWOvp9y021JSJNhvqqYk2G+ppTq021HLs02pDLUd3rTZERw1tjd2GOoqp3YY6giLabajjbqflhuX8ivgyw3oXL5fx7pdLbxoq4ksMw22WJLjfsMEJqRa/mBpruNv5AsPlRzLcOxOEl8qOGnpE44Zhju/GXhQrfx7MHriZNtxObyclqksA869cGTb8fFSPnkfF+WF+Y2rW8PNxU4i3Sv/C/LAjRg2bZ+2EStARhBazuwuThuHTMRfLVQznd4gmDSV33rDK1vD8C7oGDZey3lolE+dfnDNoKN16ULksP39QY85Q/r8vFDpFmw3lPRkTbhsqnONSuGhtsWGoMGZW+HGLDVWiFChURIsNVZbk2cFlQ6X70fLL8hYbKk1duXQqbK+hWuAlLF22sddQ7Qq4vLuw11AtZfJxm72GkVLK5MHGLDZUmvUQ6dFMMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMARDMNRtSLehhNNUWqWfLZSiPdBW9usaQvD072k850+fKYazkP66w08RAwAAuIMXz/k+huVB5rlhFmiKGG0roggazU+aWAZtgnj2wNVqcBzoCHFqMTwNZPG23IZtUKAUJsZZaNsZ7n0upnzfGep6YcBGRIF6Q33PmVgHr8+GqPS1JtI+ylRvuPLlDcwRjK6+DFHkZznl58gvZ0O09nE5h6zRjyGq/KuK1wfBvgxR5pvi96N8V0NU+VVQyfeTbt+GaG3iEdM3wfga3RuiiPpSUikdxM8aGKJVaea93RcjeDl8DmxoeH5v1/Hen1Fe3IbpuzVEaN9uOKaCuefJ+jfZ+aZNR0Zjw440bopMw9MfLybPiiYe63X8B12BcdmLsGMEAAAAAElFTkSuQmCC"
+                                alt="" height="10px" width='30px'><i class="fa-linkedin-in"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- <form id="contact-form" class="space-y-4">
+                    <input type="text" placeholder="Name" class="w-full p-3 border rounded" required>
+                    <input type="email" placeholder="Email" class="w-full p-3 border rounded" required>
+                    <textarea placeholder="Message" class="w-full p-3 border rounded" rows="5" required></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send
+                        Message</button>
+                </form> -->
+                <form method="POST" id="form"class="space-y-4" style="background-color: #ffffff;">
+                
+                    <input type="hidden" name="access_key" value="5784d9ac-b8da-4678-bc5f-9b224dfb7332">
+                
+                    <input type="text" name="name"placeholder="Enter Your Name" class="w-full p-3 border rounded mr-5" required>
+                    <input type="email" name="email" placeholder="Enter Your Email"class="w-full p-3 border rounded" required>
+                    <textarea name="message"placeholder="Message"class="w-full p-3 border rounded" rows="5" required></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send
+</button>
+                    <div id="result"></div>    
+                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Clumpcoder IT Solutions</h4>
+                    <p>Innovating with technology since 2010.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+                        <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">Cloud Solutions</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Cybersecurity</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Software Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subscribe</h4>
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full px-3 py-2 rounded-md bg-gray-700 text-white mb-2">
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded btn-hover">Subscribe</button>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>© 2024 ClumpCoder Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Mobile menu toggle
+      AOS.init();
+
+        const form = document.getElementById('form');
+            const result = document.getElementById('result');
+
+            form.addEventListener('submit', function (e) {
+                const formData = new FormData(form);
+                e.preventDefault();
+
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                result.innerHTML = "Please wait..."
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = json.message;
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function () {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (mobileMenu) mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonialSlide = document.querySelector('.testimonial-slide');
+        const testimonials = document.querySelectorAll('.testimonial-slide > div');
+        const totalTestimonials = testimonials.length;
+
+        document.getElementById('next-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            updateTestimonialSlide();
+        });
+
+        document.getElementById('prev-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            updateTestimonialSlide();
+        });
+
+        function updateTestimonialSlide() {
+            testimonialSlide.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        // Contact form submission (mock)
+        document.querySelector('#contact form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Subscribe form
+        document.querySelector('input[type="email"]').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                alert('Thank you for subscribing!');
+                this.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>
