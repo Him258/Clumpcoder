@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClumpCoder IT Solutions - IT Company</title>
+    <link rel="icon" href="ll.jpeg" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add this inside <head> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: red;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dbbdbe30-1010-43b3-aa97-3ca746d067e5.png');
+            background-size: cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            /* border: 5px solid black; */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgb(159, 159, 159);
+        }
+
+        .fade-in {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+        }
+
+        .testimonial-slide {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
+            /* Self */
+        .tech-item{
+            border: 0.1px solid black;
+        }
+
+        .tech-item:hover{
+            /* transform: translateY(5px); */
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgb(159, 159, 159);
+        }
+         /* @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0; /* shuru me hidden rahega */
+    /* animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.5s; /* 2 second baad start hoga */
+  /* } */  
+   /* @keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .zoom-in {
+    opacity: 0; 
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 0.5s; /* 2 sec delay */
+  /* }  */
+     @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+
+  .fade-in-out {
+    animation: fadeInOut 2s ease-in-out infinite;
+  }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900" style="background-color: 	#ffffff;">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="data:image/jpeg;base64,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"
+                    alt="TechNova Solutions logo featuring interconnected gears and circuit patterns in blue and green colors representing technology and innovation"
+                    class="h-10 w-10">
+            <h1 class="text-2xl font-bold bg-black from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+  ClumpCoder
+</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-blue-600 transition"><b>Home</b></a>
+                <a href="#services" class="text-gray-700 hover:text-blue-600 transition"><b>Services</b></a>
+                <a href="#about" class="text-gray-700 hover:text-blue-600 transition"><b>About</b></a>
+                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 transition"><b>Portfolio</b></a>
+                <!-- <a href="#team" class="text-gray-700 hover:text-blue-600 transition"><b>Career</b></a> -->
+<a href="career.html" class="text-gray-700 hover:text-blue-600 transition"><b>Career</b></a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 transition"><b>Contact</b></a>
+            </nav>
+            <button id="mobile-menu-toggle" class="md:hidden text-gray-700"><i class="fas fa-bars"></i></button>
+        </div>
+       
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden" style="background-color: #fbfbfb;">
+    <!-- Full-screen background video for immersive tech experience -->
+    <video autoplay muted loop playsinline 
+        class="absolute top-0 left-0 w-full h-full object-cover z-0 tech-video">
+        <source src="media/vecteezy_document-management-concept-virtual-screen-icons-document_44606384.mp4" type="video/mp4" />
+        <!-- Fallback description for technology-themed background video -->
+        Your browser does not support the video tag. This is a technology-themed background video showcasing
+        advanced computer circuits, flowing data streams, animated software code, cloud architecture icons, and AI
+        neural network patterns to embody cutting-edge IT innovations, digital workflows, and futuristic tech
+        developments for an engaging homepage experience.
+    </video>
+
+        <!-- Semi-transparent overlay for text readability and stylish effect -->
+        <div
+            class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black via-transparent to-black opacity-60 z-10">
+        </div>
+
+        <!-- Content layered on top of the background video -->
+        <div
+            class="relative z-10 text-center text-white p-6 bg-black bg-opacity-30 rounded-lg max-w-2xl mx-auto animate-fadeInUp">
+<h1 class="text-4xl font-extrabold mb-4 drop-shadow-lg fade-in-out color">
+  ClumpCoder is a multi-faceted tech company focused on web, mobile, e-commerce, and AI development solutions
+</h1>
+
+            </h1>
+            <p class="text-lg mb-6 drop-shadow-md">We build more than technology—we build momentum.
+At our core, we’re an IT powerhouse dedicated to transforming businesses with future-ready digital solutions. Our work is designed to empower brands, accelerate growth, and set new standards of innovation that separate you from the competition.</p>
+            <a href="#contact"
+                class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">Get
+                Started Now</a>
+        </div>
+    </section>
+    <!-- <section id="home" class="hero min-h-screen flex items-center justify-center text-white pt-20">
+        <div class="container mx-auto px-4 text-center fade-in">
+            <h2 class="text-5xl font-bold mb-4">Innovating Tomorrow's Technology Today</h2>
+            <p class="text-xl mb-8">Leading IT solutions for businesses worldwide, from cloud computing to
+                cybersecurity.</p>
+            <div class="flex justify-center space-x-4">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full btn-hover">Get
+                    Started</button>
+                <button
+                    class="border border-white text-white px-8 py-3 rounded-full btn-hover hover:bg-white hover:text-blue-600">Learn
+                    More</button>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-gray-100" style="background-color: #ffffff;"  data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container text-center mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-8 border-b-4 border-green-500 inline-block pb-2 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Our Services</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-cloud text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Cloud Solutions</h4>
+                    <p>Scalable cloud infrastructure and migration services for seamless operations.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-shield-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Cybersecurity</h4>
+                    <p>Advanced protection against threats with cutting-edge security protocols.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-code text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Software Development</h4>
+                    <p>Custom software tailored to your business needs using modern technologies.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-database text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Data Analytics</h4>
+                    <p>Transform data into insights with AI-driven analytics platforms.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-robot text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">AI & Machine Learning</h4>
+                    <p>Intelligent automation and predictive modeling for smarter decisions.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-mobile-alt text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Mobile Application</h4>
+                    <p>In today’s digital era, mobile applications have become an integral part of everyday life.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Web Application</h4>
+                    <p>Web applications are powerful tools that allow businesses to provide services and solutions directly through browsers without the need for installation.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-home text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Ocman Realty</h4>
+                    <p>At Ocman Realty, we believe that finding the perfect property is more than just a transaction – it’s about building dreams and creating value.</p>
+                </div>
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-cube text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Virtual Realty</h4>
+                    <p>At Virtual Realty, we combine technology and innovation to redefine the real estate experience.</p>
+                </div> 
+                <div class="service-card p-6 text-center">
+                    <i class="fas fa-bullhorn text-4xl text-blue-600 mb-4"></i>
+                    <h4 class="text-xl font-semibold mb-2">Digital Marketing</h4>
+                    <p>Digital Marketing helps businesses reach the right audience, build brand awareness, and drive measurable results through strategies like SEO, social media, content marketing, email campaigns, and paid advertising.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center ">
+                <div class="lg:w-1/2 mb-8 lg:mb-0">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a13bebdc-2d47-4e8e-bacd-bc8b26f867c6.png"
+                        alt="Modern office space with diverse team collaborating on computers surrounded by innovative tech gadgets and light-colored furniture"
+                        class="rounded-lg shadow-md"
+                        data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                </div>
+                <div class="lg:w-1/2 lg:pl-8 text-center">
+                    <h3 class="text-3xl font-bold mb-6 text-center border-b-4 border-green-500 inline-block pb-2 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">About Clumpcoder IT Solutions</h3>
+                    <p class="text-md mb-4 fade-in" data-aos="fade-up" data-aos-delay="250" data-aos-duration="1000">ClumpCoder is a multi-faceted tech company focused on web, mobile, e-commerce, and AI development solutions, boasting a small but dynamic team of approximately 15 professionals, including web developers, mobile developers, AI developers, designers, and testers. Their vision is centered around achieving 100% customer satisfaction by delivering top-notch products and services at competitive prices, with the goal of becoming the premier choice in computing and information technology services, consultancy, and development through a comprehensive service offering. he Technologies on which we work on:
+
+- Web/ Mobile Technologies: 
+ Python, PHP, React js, Angular js, React Native, Android, Flutter, HTML, CSS, Javascript, My SQL, 
+MongoDB, AWS, Git 
+
+- Artificial Intelligence: 
+ ML, Computer Vision, OpenCV, pandas, Numpy, Scikit learn, Chatterbot, Tensor Flow
+
+- Task Management Tool: 
+ Jira, Asana, Trello, Basecamp etc.</p>
+                   
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded btn-hover">Read
+                        More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Technology Section -->
+    <section id="technologies" class="py-10 px-6 bg-white" style="background-color: #ffffff;">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-10 animate-fadeInUp bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent" >Our Comprehensive Technology Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 ">
+                
+                <!-- Expanded list covering a wide range of technologies as requested -->
+                <div class="tech-item bg-gray-200 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/540db1c5-6517-49cc-a922-068f10102c35.png"
+                        alt="Shopify icon with blue-green color scheme symbolizing robust e-commerce platform for online retail and sales automation"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Shopify</h3>
+                    <p class="text-sm text-gray-600 mt-2">E-commerce platform</p>
+                </div>
+                <div class="tech-item bg-gray-200 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/88bf82ed-1fdf-4779-9074-565420b0f45c.png"
+                        alt="WordPress icon in blue-white tones representing a versatile content management system for websites and blogs"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">WordPress</h3>
+                    <p class="text-sm text-gray-600 mt-2">CMS platform</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Copilot</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Web 4.0</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="data:image/png;base64,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"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">buildSpace</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="data:image/jpeg;base64,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"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Uizer</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <!-- <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee3b7223-c1b5-4ac7-bf0d-924eb9c064e9.png"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Python</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div> -->
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c931eff3-e553-473b-8a3b-643e71f94923.png"
+                        alt="React logo with atomic design in blue illustrating a popular library for building interactive user interfaces"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">React</h3>
+                    <p class="text-sm text-gray-600 mt-2">Frontend framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-right" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee3b7223-c1b5-4ac7-bf0d-924eb9c064e9.png"
+                        alt="Python logo featuring coil snake in green-blue for a powerful scripting and data science programming language"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Python</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83ef151f-3a44-4077-889b-bd503d10ca65.png"
+                        alt="Java logo with coffee cup motif in brown tones for enterprise-level object-oriented programming"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Java</h3>
+                    <p class="text-sm text-gray-600 mt-2">Programming language</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="media/image.png"
+                        alt="AWS icon with orange circles for cloud computing services and infrastructure"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">AWS</h3>
+                    <p class="text-sm text-gray-600 mt-2">Cloud platform</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c260e8cb-7ba4-4ad9-94f0-dfa7577846b1.png"
+                        alt="TensorFlow logo in orange-blue for AI and machine learning neural network framework"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">TensorFlow</h3>
+                    <p class="text-sm text-gray-600 mt-2">ML framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6137faba-8f91-41de-a0c1-d9cdad661f3d.png"
+                        alt="Docker logo with container ship for application virtualization and deployment"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Docker</h3>
+                    <p class="text-sm text-gray-600 mt-2">Containerization</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/065d1fcb-653f-437f-af29-2041d69748e5.png"
+                        alt="Kubernetes logo with wheel for container orchestration and management"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Kubernetes</h3>
+                    <p class="text-sm text-gray-600 mt-2">Orchestration tool</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/349dabaf-729b-4d34-ba09-07d8909b6cc3.png"
+                        alt="MongoDB icon with green leaf for NoSQL database for flexible data management"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">MongoDB</h3>
+                    <p class="text-sm text-gray-600 mt-2">NoSQL database</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5e53ed4c-c1d0-4559-a9f1-37f3ea7020b2.png"
+                        alt="Node.js logo with hexagon emblem in green for server-side JavaScript runtime"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Node.js</h3>
+                    <p class="text-sm text-gray-600 mt-2">Runtime environment</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1fb2e5b5-cbe4-4aaa-96c5-952fcf541d1c.png"
+                        alt="Angular logo with A design in red for comprehensive web application framework"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Angular</h3>
+                    <p class="text-sm text-gray-600 mt-2">Framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/19a896c1-9045-43f1-86d0-5182ad8de659.png"
+                        alt="SQL Server logo in blue-red for relational database management system"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">SQL Server</h3>
+                    <p class="text-sm text-gray-600 mt-2">Database</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fed134de-d67b-45e8-9bfb-045025d9fd54.png"
+                        alt="Vue.js logo with curving V in green for progressive JavaScript framework"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Vue.js</h3>
+                    <p class="text-sm text-gray-600 mt-2">Framework</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7f080f44-cb8d-4a28-9b37-da8a32753a67.png"
+                        alt="Azure logo with cloud shapes in blue-orange for Microsoft cloud services"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Azure</h3>
+                    <p class="text-sm text-gray-600 mt-2">Cloud platform</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/72acf646-fce8-4cc1-864b-aa2eec63c55c.png"
+                        alt="Git logo with branching tree in orange for version control system"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Git</h3>
+                    <p class="text-sm text-gray-600 mt-2">Version control</p>
+                </div>
+                <!-- Additional technologies for completeness -->
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2bfa6af1-5397-46a2-94c7-c2f24387034d.png"
+                        alt="MapReduce icon illustrating big data processing frameworks like Hadoop for large-scale data analysis and insights"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Data Processing</h3>
+                    <p class="text-sm text-gray-600 mt-2">Big data frameworks</p>
+                </div>
+                <div class="tech-item bg-gray-100 p-6 rounded-lg text-center hover:bg-gray-200 transition-colors" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/61c42931-2b11-479c-9dfa-cad807ffba99.png"
+                        alt="Blockchain chain link icon representing decentralized ledger technology for secure transactions and smart contracts"
+                        class="mx-auto mb-4 rounded">
+                    <h3 class="text-lg font-semibold">Blockchain</h3>
+                    <p class="text-sm text-gray-600 mt-2">Distributed ledger</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-10 bg-gray-100" style="background-color: #ffffff;" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Our Portfolio</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="media/kuhu.png"
+                        alt="Dashboard interface for a financial app showing charts, graphs, and user-friendly controls in a clean modern layout"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">KUHOO-Online Education</h4>
+                        <p>At Kuhoo, we believe that providing the right loan at the right time can positively transform not just the life of a student but also uplift their entire family. Our goal is to make higher education accessible without the weight of financial stress.
+</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="media/Edu_Academy.png"
+                        alt="Healthcare management system interface with patient records and appointment scheduler in soothing colors"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Education Academy</h4>
+                        <p>~Enhanced Efficiency in school operations.
+~High Client Satisfaction with robust features.
+~Market Recognition as a trusted ERP solution.
+</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="media/Voice.png"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Easy Invoice App</h4>
+                        <p>Easy Invoice App – Generate and send professional PDF invoices and draft orders. Customize templates with your logo and store details, bulk print/export, and automate invoice delivery.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="media/Triliungal.png"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">TRILINGUALKIDSACADEMY</h4>
+                        <p>Trilingual Kids -
+The concept of the project is to develop a model 
+where Teachers and Students can connect virtually 
+instead of going to schools. The application has an 
+interface where Teacher can upload the 
+assignments for students to work on it and give 
+them the score according to their performance. 
+</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="media/Mathgame.jpg"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">MathGame</h4>
+                        <p>MathGame is an interactive and fun educational platform designed to make learning mathematics enjoyable for students of all ages. By combining games, challenges, and quizzes, MathGame transforms ordinary math practice into an exciting adventure.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="media/mufo.png"
+                        alt="E-learning platform homepage with course catalogs, student progress tracking, and interactive elements"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold mb-2">Mufo-App</h4>
+                        <p>Mufo is an innovative platform designed to make learning smart, interactive, and fun. Whether you are a student, professional, or lifelong learner, Mufo provides tools and resources that simplify complex concepts and enhance understanding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="py-8 bg-gray-100" style="background-color: #ffffff;" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-6 rounded-lg shadow">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/42e3063a-e7a5-4319-b5fd-12275009b310.png"
+                        alt="Security shield icon with digital locks and codes on a server rack, representing advanced cybersecurity measures in a modern data center setting" />
+                    <h3 class="text-xl font-semibold mb-4" style="margin-top: 20px;">Cybersecurity</h3>
+                    <p class="text-gray-700">Protect your data with our comprehensive security solutions, including
+                        threat detection and compliance management.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d4b1defb-89cf-4205-a4ca-b026f688f3f1.png"
+                        alt="Cloud with connected networks and data streams, illustrating scalable cloud computing infrastructure in a futuristic sky environment" />
+                    <h3 class="text-xl font-semibold mb-4" style="margin-top: 20px;">Cloud Computing</h3>
+                    <p class="text-gray-700">Scale your operations with our cloud-based solutions, ensuring flexibility
+                        and cost-efficiency.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/26493b35-cd2d-41f9-b947-443f6438bcc0.png"
+                        alt="Artificial intelligence brain with neural networks and machine learning algorithms visualized as glowing circuits on a tech circuit board" />
+                    <h3 class="text-xl font-semibold mb-4" style="margin-top: 20px;">AI & ML Solutions</h3>
+                    <p class="text-gray-700">Harness the power of AI with custom machine learning models tailored to
+                        your business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-8" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4">
+            <!-- <h2 class="text-3xl font-bold text-center mb-12">Our Portfolio</h2> -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-item bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/72007297-880a-4240-833a-36ecd349fa5a.png"
+                        alt="Large-scale ERP system dashboard on multiple screens showing analytics and data visualization in a corporate office with team members reviewing results" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">ERP System Development</h3>
+                        <p class="text-gray-700">Custom ERP system for a manufacturing company, increasing efficiency by
+                            40%.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/92357d0f-cea5-41f5-a3c3-6483be415587.png"
+                        alt="Mobile app interface with e-commerce features, shopping cart, payment gateway, and delivery tracking on smartphone and tablet screens" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                        <p class="text-gray-700">Full-stack e-commerce solution with secure payment integration.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item bg-white rounded-lg shadow overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01c6b4ca-e7f7-431d-b5ba-e98335e41c02.png"
+                        alt="Interactive data visualization dashboard with charts, graphs, and real-time metrics on a computer screen in a business intelligence control room" />
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold mb-2">Business Intelligence</h3>
+                        <p class="text-gray-700">Advanced BI tools providing actionable insights for executive
+                            decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team Section -->
+    <!-- <section id="team" class="py-10">
+        <div class="container mx-auto px-4 ">
+            <h3 class="text-3xl font-bold text-center mb-12">Meet Our Team</h3>
+            <div class="grid md:grid-cols-2 ">
+                <div class="text-center">
+                    <img src="Image/ss.jpg"
+                        alt="Portrait of Alex Johnson, CEO, smiling professional man in business attire with short brown hair"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-semibold">Shraddha Khandelwal</h4>
+                    <p class="text-gray-600">CEO & Founder</p>
+                    <p>15+ years in tech leadership</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/016d0935-7a4b-477d-b609-5ee8a99a2e1c.png"
+                        alt="Portrait of Sarah Chen, CTO, focused Asian woman in tech attire with glasses and black hair"
+                        class="w-40 h-40 rounded-full mx-auto mb-4 shadow-md">
+                    <h4 class="text-xl font-semibold">Sarah Chen</h4>
+                    <p class="text-gray-600">CTO</p>
+                    <p>Expert in cloud architectures</p>
+                </div>
+                
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-10 bg-gray-100" style="background-color: #ffffff;" data-aos="fade-left" data-aos-delay="250" data-aos-duration="1000">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 bg-black from-blue-500 via-purple-500 to-pink-500 
+           bg-clip-text text-transparent">Latest Insights</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c3c96d96-2bc3-4148-947c-86cd4fc7c18c.png"
+                        alt="Illustrative graphic showing futuristic cityscapes with integrated AI technologies and autonomous vehicles"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2">The Future of AI in Business</h4>
+                    <p class="text-gray-600 mb-4">Exploring how AI is reshaping industries and impacting businesses.</p>
+                    <button class="text-blue-600 hover:text-blue-700 font-semibold">Read Article</button>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c436b3ea-fe45-4397-8f72-f2131f6aa15c.png"
+                        alt="Infographic explaining cloud security layers with shields, locks, and data flow diagrams"
+                        class="w-full h-48 object-cover rounded mb-4">
+                    <h4 class="text-xl font-semibold mb-2">Cloud Security Best Practices</h4>
+                    <p class="text-gray-600 mb-4">Essential strategies to protect your data in the cloud era.</p>
+                    <button class="text-blue-600 hover:text-blue-700 font-semibold">Read Article</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-Time Map Section -->
+    <section id="map" class="py-10" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">Our Global Presence</h3>
+            <p class="text-center mb-8">Track our offices and operations in real-time across the world.</p>
+            <div class="map-container rounded-lg shadow-md">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.3727457765403!2d75.87110847501972!3d22.714382927759416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd40f16f9f4b%3A0x1628300439af6dca!2sClumpCoder!5e0!3m2!1sen!2sin!4v1757060738207!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:2px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="mt-8 text-center">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded btn-hover">View Full
+                    Map</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <!-- <section class="py-5 bg-gray-100" style="background-color: #ece5dd;">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">What Our Clients Say</h3>
+            <div class="relative overflow-hidden">
+                <div class="testimonial-slider">
+                    <div class="testimonial-slide">
+                        <div class="bg-white rounded-lg shadow-md p-8 mx-4 min-w-full">
+                            <p class="text-lg italic mb-4">"TechNova transformed our operations with their cloud
+                                solutions. Extraordinary service!"</p>
+                            <p class="font-semibold">- John Smith, CEO of Acme Corp</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-8 mx-4 min-w-full">
+                            <p class="text-lg italic mb-4">"Their cybersecurity expertise saved us from potential
+                                breaches. Highly recommended."</p>
+                            <p class="font-semibold">- Lisa Wong, CIO of TechStart Inc</p>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md p-8 mx-4 min-w-full">
+                            <p class="text-lg italic mb-4">"Professional, innovative, and reliable. They've been our
+                                tech partners for years."</p>
+                            <p class="font-semibold">- David Lee, Founder of GlobalTech</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-8">
+                    <button id="prev-testimonial"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded mr-4">Prev</button>
+                    <button id="next-testimonial"
+                        class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-4 py-2 rounded">Next</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 m-20" style="background-color: #ffffff;">
+        <div class="container mx-auto px-4" style="background-color: #ffffff;">
+            <h3 class="text-3xl font-bold text-center mb-12">Get In Touch</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="mb-6">
+    <h4 class="text-xl font-semibold mb-2">Contact Information</h4>
+
+    <p class="mb-2">
+        <i class="fas fa-map-marker-alt mr-2 text-blue-600"></i>
+        411 President Tower, Madhumilan Square, Indore
+    </p>
+
+    <p class="mb-2">
+        <i class="fas fa-phone-alt mr-2 text-blue-600"></i>
+        +91 94798-40841
+    </p>
+
+    <p class="mb-2">
+        <i class="fas fa-envelope mr-2 text-blue-600"></i>
+        developer.clumpcoder@gmail.com
+    </p>
+</div>
+
+                    <div>
+                        <h4 class="text-xl font-semibold mb-2">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            
+                            <a href="https://www.linkedin.com/company/clumpcoder/posts/?feedView=all" class="text-blue-600 hover:text-blue-700"><img src="data:image/png;base64,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"
+                                alt="" height="10px" width='30px'><i class="fa-linkedin-in"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- <form id="contact-form" class="space-y-4">
+                    <input type="text" placeholder="Name" class="w-full p-3 border rounded" required>
+                    <input type="email" placeholder="Email" class="w-full p-3 border rounded" required>
+                    <textarea placeholder="Message" class="w-full p-3 border rounded" rows="5" required></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send
+                        Message</button>
+                </form> -->
+                <form method="POST" id="form"class="space-y-4" style="background-color: #ffffff;">
+                
+                    <input type="hidden" name="access_key" value="6b785bd9-9fd6-46b5-bcf7-4c958c211d47">
+                
+                    <input type="text" name="name"placeholder="Enter Your Name" class="w-full p-3 border rounded mr-5" required>
+                    <input type="email" name="email" placeholder="Enter Your Email"class="w-full p-3 border rounded" required>
+                    <textarea name="message"placeholder="Message"class="w-full p-3 border rounded" rows="5" required></textarea>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">Send
+</button>
+                    <div id="result"></div>    
+                 </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Clumpcoder IT Solutions</h4>
+                    <p>Innovating with technology since 2010.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+                        <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+                        <li><a href="#about" class="hover:text-blue-400">About</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">Cloud Solutions</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Cybersecurity</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Software Development</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Subscribe</h4>
+                    <input type="email" placeholder="Enter your email"
+                        class="w-full px-3 py-2 rounded-md bg-gray-700 text-white mb-2">
+                    <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded btn-hover">Subscribe</button>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>© 2024 ClumpCoder Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // Mobile menu toggle
+      AOS.init();
+
+        const form = document.getElementById('form');
+            const result = document.getElementById('result');
+
+            form.addEventListener('submit', function (e) {
+                const formData = new FormData(form);
+                e.preventDefault();
+
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
+
+                result.innerHTML = "Please wait..."
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                    .then(async (response) => {
+                        let json = await response.json();
+                        if (response.status == 200) {
+                            result.innerHTML = json.message;
+                        } else {
+                            console.log(response);
+                            result.innerHTML = json.message;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        result.innerHTML = "Something went wrong!";
+                    })
+                    .then(function () {
+                        form.reset();
+                        setTimeout(() => {
+                            result.style.display = "none";
+                        }, 3000);
+                    });
+            });
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (mobileMenu) mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Testimonial slider
+        let currentTestimonial = 0;
+        const testimonialSlide = document.querySelector('.testimonial-slide');
+        const testimonials = document.querySelectorAll('.testimonial-slide > div');
+        const totalTestimonials = testimonials.length;
+
+        document.getElementById('next-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
+            updateTestimonialSlide();
+        });
+
+        document.getElementById('prev-testimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
+            updateTestimonialSlide();
+        });
+
+        function updateTestimonialSlide() {
+            testimonialSlide.style.transform = `translateX(-${currentTestimonial * 100}%)`;
+        }
+
+        // Contact form submission (mock)
+        document.querySelector('#contact form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Subscribe form
+        document.querySelector('input[type="email"]').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                alert('Thank you for subscribing!');
+                this.value = '';
+            }
+        });
+    </script>
+</body>
+
+</html>
+</content>
+</create_file>
